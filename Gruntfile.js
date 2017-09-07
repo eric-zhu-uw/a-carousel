@@ -23,6 +23,22 @@ module.exports = function(grunt) {
       // when this task is run, lint the Gruntfile and all js files in src
       build: ['Grunfile.js', 'src/**/*.js']
     },
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed',
+          sourcemap: 'none',
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/scss/',
+          src: ['*.scss'],
+          dest: 'build',
+          ext: '.css',
+        }]
+      }
+    }
+
   });
 
   // ===========================================================================
@@ -35,6 +51,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   grunt.registerTask('default', ['jshint']);
 
