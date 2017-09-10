@@ -3,7 +3,7 @@
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
 module.exports = function(grunt) {
-
+  require('load-grunt-tasks')(grunt);
   // ===========================================================================
   // CONFIGURE GRUNT ===========================================================
   // ===========================================================================
@@ -37,6 +37,32 @@ module.exports = function(grunt) {
           ext: '.css',
         }]
       }
+    },
+    eslint: {
+      options: {
+        configFile: '.eslintrc.json',
+      },
+      target: ['src/.']
+    },
+    babel: {
+      options: {
+        sourceMap: false,
+        presets: ['env'],
+      },
+      dist: {
+        files: {
+          'build/index.js': 'src/index.js'
+        }
+      }
+    },
+    watch: {
+      src: {
+        files: ['src/**/*.js', 'src/**/*.scss'],
+        tasks: ['sass', 'babel'],
+        options: {
+          livereload: true,
+        }
+      }
     }
 
   });
@@ -53,6 +79,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['sass', 'babel', 'watch']);
 
 };

@@ -1,3 +1,53 @@
-.test {
+.forwardButton {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.backwardButton {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.multipleContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+}
+
+.container {
+  // display: inline;
+  // position: relative;
   background-color: blue;
+  width: 100%;
+  height: 100%;
+}
+
+.displayPos {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayPosChild {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 20px;
+}
+
+.displayPosChild:hover {
+  background-color: black;
 }
