@@ -22,7 +22,7 @@ How to include the CSS file...
 ### Options
 
 | Done | Property | Type | Default | Values | Description |
-|| -------- | ---- | ------- | ------ | ----------- |
+| ---- | -------- | ---- | ------- | ------ | ----------- |
 | ✅ | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
 | ❌ | arrowPosition | `string` | `outside` | outside, inside, bottom, below | Determines the location of the next/prev arrow placement |
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
