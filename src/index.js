@@ -42,6 +42,14 @@ export default class Carousel extends React.Component {
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
     this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
 
+
+    /* ==========================================================================================
+     *  backwardButtonClass: classNames for the backwards button
+     * ========================================================================================== */
+     console.log(this.arrow);
+    this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement');
+
+
     /* ==========================================================================================
      *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
      *  numHeight: gets the <Int> from this.props.height |~ Default: 100%
@@ -71,8 +79,8 @@ export default class Carousel extends React.Component {
 
     return (
       <div>
-        <div className='backwardButton' onClick={this.backward} />
         <div className='carousel'>
+          <div className={ this.backwardButtonClass } onClick={this.backward} />
           <div style={ multipleContainerStyle } className='multipleContainer'>
             <div style={{ width: this.props.width, height: this.props.height }} className='container'>
               { this.props.children[this.props.children.length - 1] }

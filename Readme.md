@@ -13,9 +13,15 @@ How to include the CSS file...
 1. either use webpack & load it in..
 2. import the file directly
 
-###Options
+### To add additional styling to Carousel
+
+| Element | Classname |
+| Previous Slide Button | backwardButton |
+
+### Options
 
 | Property | Type | Default | Values | Description |
 | -------- | ---- | ------- | ------ | ----------- |
 | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
-| arrowStyle | `string` | `below` | ... | ... |
+| arrowPlacement | `string` | `outside` | outside, inside, bottom, below | Determines the location of the next/prev arrow placement |
+| arrowStyle | `string` | `arrow` | ... | ... |
