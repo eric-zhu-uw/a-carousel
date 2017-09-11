@@ -41,14 +41,16 @@ export default class Carousel extends React.Component {
     this.heightSuffix = '%';
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
     this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
+    this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
+
+    console.log(this.arrowPosition);
 
 
     /* ==========================================================================================
      *  backwardButtonClass: classNames for the backwards button
      * ========================================================================================== */
-     console.log(this.arrow);
-    this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement');
-
+    this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
+    this.forwardButtonClass = 'forwardButton' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
 
     /* ==========================================================================================
      *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
@@ -78,7 +80,7 @@ export default class Carousel extends React.Component {
 
 
     return (
-      <div>
+      <div style={{position: 'relative'}}>
         <div className='carousel'>
           <div className={ this.backwardButtonClass } onClick={this.backward} />
           <div style={ multipleContainerStyle } className='multipleContainer'>
@@ -99,7 +101,7 @@ export default class Carousel extends React.Component {
             </div>
           </div>
         </div>
-        <div className='forwardButton' onClick={this.forward} />
+        <div className={ this.forwardButtonClass } onClick={this.forward} />
         <div className='displayPos'>
           { displayPosChild }
         </div>

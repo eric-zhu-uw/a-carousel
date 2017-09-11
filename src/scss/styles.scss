@@ -1,32 +1,16 @@
+// ============ GLOBAL STYLES ============ //
 .hideElement {
   display: none;
 }
 
-.forwardButton {
-  width: 30px;
-  height: 30px;
-  background-color: black;
-}
+// ======================================= //
 
-.backwardButton {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  background-color: black;
-}
-
-.backwardButtonOutside {
-  top: 0;
-  height: 50px;
-}
+@import 'components/buttons';
 
 .carousel {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .multipleContainer {
