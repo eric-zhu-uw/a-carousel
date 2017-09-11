@@ -17,4 +17,5 @@ How to include the CSS file...
 
 | Property | Type | Default | Values | Description |
 | -------- | ---- | ------- | ------ | ----------- |
-| arrow | `boolean` | true | true, false | Enable the next and previous buttons on the carousel |
+| arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
+| arrowStyle | `string` | `below` | ... | ... |

@@ -10,7 +10,6 @@ import React from 'react';
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.arrow);
 
     // Purpose: Validate the developer input to ensure 2+ children are inputted
     if(this.props.children.length === undefined) {
@@ -30,6 +29,7 @@ export default class Carousel extends React.Component {
      *  height: always 100 (can be updated later for more functionalities)
      *  widthSuffix: always % (can be updated later for more functionalities)
      *  heightSuffix: always % (can be updated later for more functionalities)
+     *  arrow: Enable the next and previous buttons
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -39,6 +39,8 @@ export default class Carousel extends React.Component {
     this.height = 100;
     this.widthSuffix = '%';
     this.heightSuffix = '%';
+    this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
+    this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
 
     /* ==========================================================================================
      *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
