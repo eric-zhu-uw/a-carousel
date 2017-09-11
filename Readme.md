@@ -16,6 +16,7 @@ How to include the CSS file...
 ### To add additional styling to Carousel
 
 | Element | Classname |
+| ------- | --------- |
 | Previous Slide Button | backwardButton |
 
 ### Options
