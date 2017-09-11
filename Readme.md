@@ -15,6 +15,6 @@ How to include the CSS file...
 
 ###Options
 
-| Property | Type      | Default   | Description |
-| --- | --- | --- | --- |
-|arrow:  |    boolean |    true     | descript |
+| Property | Type | Default | Values | Description |
+| -------- | ---- | ------- | ------ | ----------- |
+| arrow | `boolean` | true | true, false | Enable the next and previous buttons on the carousel |
