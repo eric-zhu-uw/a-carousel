@@ -15,5 +15,6 @@ How to include the CSS file...
 
 ###Options
 
-width: default 100%, validation: must be ..., optional
-height: default 100%, validation: must be ..., optional
+| Property | Type      | Default   | Description |
+| --- | --- | --- | --- |
+|arrow:  |    boolean |    true     | descript |

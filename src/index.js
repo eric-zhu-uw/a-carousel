@@ -1,22 +1,35 @@
 import React from 'react';
 
-var styles = {
-  carousel: {
-    overflow: 'hidden'
-  }
-};
+/* TO DO LIST
+1. update the buttons and give options to how to style the button... "side, inside the carousel, below the carousel"
+2. allow users to chose the button styling... 4-5 default types : hover animation
+3. Update so the circle selector is being updated based off <this.state.slide>
+
+*/
 
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    //KEEP ADDING MORE TEST CASES HERE
+    console.log(this.props.arrow);
 
-    // validation of width and height and whether or not they are valid units
+    // Purpose: Validate the developer input to ensure 2+ children are inputted
+    if(this.props.children.length === undefined) {
+      throw 'Error 1: Must enter 2 or more children within the Carousel Component!';
+    }
+
+    //check more props here
+    /* ========================================================================================== */
+
+
     /* ==========================================================================================
-     *  forward: 
-     *  backward: 
-     *  numSlides:
-     *  multipleContainerWidth:
+     *  forward: Keep context of <this> forward() function in the class regardless of invocation location
+     *  backward: Keep context of <this> backward() function in the class regardless of invocation location
+     *  numSlides: Total number of slides: this.props.children.length + 2
+     *  multipleContainerWidth: The total size of the slides: this.numSlides * 100 (in proportion to carousel-size)
+     *  width: always 100 (can be updated later for more functionalities)
+     *  height: always 100 (can be updated later for more functionalities)
+     *  widthSuffix: always % (can be updated later for more functionalities)
+     *  heightSuffix: always % (can be updated later for more functionalities)
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -24,13 +37,8 @@ export default class Carousel extends React.Component {
     this.multipleContainerWidth = this.numSlides * 100;
     this.width = 100;
     this.height = 100;
-
-
-    let tempWidth = this.props.width ? this.props.width : '100%';
-    let tempHeight = this.props.height ? this.props.height : '100%';
-
-    this.containerStyle = { width: this.props.width, height: this.props.height };
-    this.container = {};
+    this.widthSuffix = '%';
+    this.heightSuffix = '%';
 
     /* ==========================================================================================
      *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
@@ -44,38 +52,21 @@ export default class Carousel extends React.Component {
      *  multipleContainerWidth:
      * ========================================================================================== */
     this.state = {
-      numWidth: parseInt(tempWidth),
-      numHeight: parseInt(tempHeight),
-      pos: -parseInt(tempWidth),
+      pos: -this.width,
       slide: 0,
-      width: tempWidth,
-      height: tempHeight,
-      widthSuffix: this.validateWH(tempWidth),
-      heightSuffix: this.validateWH(tempHeight),
-      // multipleContainerWidth: this.numSlides * 100,
       transition: 'left 0.5s',
       translateX: 0,
     };
-  }
-
-
-  // NEED TO WRITE something about how to arrange the containers so that to the right, there is always
-  // the first couple children so it can always scroll smoothly in the correct direction
-  // possible solution...?
-  //    2. one extra one... the first one is also appended onto the end @ all times based off this.props.children[this.state.slide]
-  //    3. ...
+  } // end of constructor
 
   render() {
-    let multipleContainerStyle = { left: this.state.pos + this.state.widthSuffix, width: this.multipleContainerWidth + '%', transition: this.state.transition, transform: 'translateX(' + this.state.translateX + '%)' };
-    // var containerStyle = [];
-    // for(var i = 0; i < this.props.children.length; i++) {
-    //   containerStyle.push({ width: this.props.width, height: this.props.height });
-    // }
-
+    let multipleContainerStyle = { left: this.state.pos + this.widthSuffix, width: this.multipleContainerWidth + this.widthSuffix, transition: this.state.transition, transform: 'translateX(' + this.state.translateX + '%)' };
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
-      displayPosChild.push(<div className='displayPosChild' />);
+      displayPosChild.push(<div className='displayPosChild' key={i} />);
     }
+
+
     return (
       <div>
         <div className='backwardButton' onClick={this.backward} />
@@ -104,55 +95,52 @@ export default class Carousel extends React.Component {
         </div>
       </div>
     );
-  }
+  } //end of render
 
-  // onclick forward button that will move the multiple container { left: this.state.pos - this.props.width }
+  /* ==========================================================================================
+   * Purpose: Handle the carousel moving forward resulting in a change in left & translateX properties
+   *  @ Params: n/a
+   *  @ Return: n/a
+   *  @ Error: n/a 
+   * Calculations:
+   *  @ [(this.state.pos + (this.props.children.length * this.width)) % (this.props.children.length * this.width) === 0]
+   *        |~> determines if the carousel is on the second last slide
+   *  @ [prevState.translateX + ((100 / this.numSlides) * this.props.children.length)]
+   *        |~> if second last slide, then add the size of slides (subtract 2 extra ones) to the translateX
+   *  @ [pos: prevState.pos - this.width] |~> shifts the position to the left by 100% (width of the carousel)
+   * ========================================================================================== */
   forward() {
-    console.log(this.state.pos);
-    console.log(this.multipleContainerWidth - (2 * this.width));
-    console.log(this.state.pos + (this.multipleContainerWidth - (2 * this.width)), this.state.pos + (this.multipleContainerWidth - (2 * this.width)) < 0);
-    console.log((this.state.pos + (this.multipleContainerWidth - (2 * this.width))) % ((this.props.children.length - 1) * this.width) === 0);
-    if((this.state.pos + (this.multipleContainerWidth - (2 * this.width))) <= 0 && (this.state.pos + (this.multipleContainerWidth - (2 * this.width))) % ((this.props.children.length) * this.width) === 0) {
-      // reset the pos value to the correct value...
-      console.log('SECOND LAST SLIDE');
+    if((this.state.pos + (this.props.children.length * this.width)) % (this.props.children.length * this.width) === 0) {
       this.setState((prevState) => {
-        return { translateX: prevState.translateX + (100 - (100 / this.numSlides) * 2) };
+        return { translateX: prevState.translateX + ((100 / this.numSlides) * this.props.children.length) };
       });
     }
 
     this.setState((prevState) => {
-      return { pos: prevState.pos - prevState.numWidth };
+      return { pos: prevState.pos - this.width };
     });
-  }
-
-  // onclick backward button that will move the multple container { left: this.state.pos + this.props.width }
-  backward() {
-    if(this.state.pos ===  -this.state.numWidth) {
-      // reset the pos value to the correct value...
-      this.setState({ pos: -(this.multipleContainerWidth - (3 * this.state.numWidth)) })
-    }
-    this.setState((prevState) => {
-      return { pos: prevState.pos + prevState.numWidth };
-    })
-  }
+  } //end of forward
 
   /* ==========================================================================================
-   * Purpose: To validate that a valid unit of measurement was used for the width or height props
-   *  @ Params: [str: String] - the css value for width: // height:
-   *  @ Return: [suffix[]: String ] - an element of suffix
-   *  @ Error: [1] the str did not contain any of the valid suffices 
-   * Example: 
-   *  validateWH('10px') ~> 'px'
-   *  validateWH('39%') ~> '%'
-   *  validateWH('39xxx') ~> ERROR 1
+   * Purpose: Handle the carousel moving backwards resulting in a change in left & translateX properties
+   *  @ Params: n/a
+   *  @ Return: n/a
+   *  @ Error: n/a 
+   * Calculations:
+   *  @ [(this.state.pos + this.width) % (this.props.children.length * this.width) === 0]
+   *        |~> determines if the carousel is on the second slide
+   *  @ [prevState.translateX + ((100 / this.numSlides) * this.props.children.length)]
+   *        |~> if second last slide, then subtract the size of slides (subtract 2 extra ones) to the translateX
+   *  @ [pos: prevState.pos + this.width] |~> shifts the position to the right by 100% (width of the carousel)
    * ========================================================================================== */
-  validateWH(str) {
-    let suffix = ['px', '%', 'em', 'vw', 'vh', 'rem'];
-    for(let i = 0; i < suffix.length; i++) {
-      if (str.endsWith(suffix[i])) {
-        return suffix[i];
-      }
+  backward() {
+    if(((this.state.pos + this.width) % (this.props.children.length * this.width)) === 0) {
+      this.setState((prevState) => {
+        return { translateX: prevState.translateX - ((100 / this.numSlides) * this.props.children.length)};
+      })
     }
-    throw 'Error 1: Did not enter a valid unit of measurement for width or height';
-  }
-}
+    this.setState((prevState) => {
+      return { pos: prevState.pos + this.width };
+    })
+  } //end of backward
+} //end of Carousel Class
