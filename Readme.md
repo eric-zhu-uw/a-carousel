@@ -17,15 +17,30 @@ How to include the CSS file...
 A React Module simplifying UI Carousels
 
 ### Description
+This is not the first carousel module nor the last carousel module you'll see. But a-carousel is the first module focused on responsive design, simplicity and robustness to turn your carousel nightmares into workable UI masterpieces.
 
+### Setup a-carousel in your React Application
+Currently no CDN available
+`javascript CDN`
+`css CDN`
 
-### MORE INFORMATION
+Package Manager
+`npm install a-carousel`
+
 
 ### To add additional styling to Carousel
 
 | Element | Classname |
 | ------- | --------- |
 | Previous Slide Button | backwardButton |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+
 
 ### Options
 
@@ -41,6 +56,12 @@ A React Module simplifying UI Carousels
 | ❌ | autoplaySpeed | `number` | `3(s)` | any positive number | Determines the amount of time spent before moving to the next carousel slide |
 | ❌ | dots | `boolean` | `false` | true, false | Enable slide indicator dots to show the current slide |
 | ❌ | dotsClick | `boolean` | `true` | true, false | Enables indicator dots to be clickable to go to particular slide numbers |
+| ❌ | touch | `boolean` | `true` | true, false | Enabled touch scrolling of the carousel |
+
+| ❌ | arrowStyle | `string` | `arrow` | ... | ... |
+
+| ❌ | arrowStyle | `string` | `arrow` | ... | ... |
+
 
 
 ### How to Contribute to the Project
