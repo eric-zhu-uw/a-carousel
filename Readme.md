@@ -21,8 +21,12 @@ This is not the first carousel module nor the last carousel module you'll see. B
 
 ### Setup a-carousel in your React Application
 Currently no CDN available
-```javascript CDN```
-```css CDN```
+```
+javascript CDN
+```
+```
+css CDN
+```
 
 Package Manager
 `npm install a-carousel`
