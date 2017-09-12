@@ -19,6 +19,11 @@ A React Module simplifying UI Carousels
 ### Description
 This is not the first carousel module nor the last carousel module you'll see. But a-carousel is the first module focused on responsive design, simplicity and robustness to turn your carousel nightmares into workable UI masterpieces.
 
+### Examples of the Carousel 
+```
+some link to something
+```
+
 ### Setup a-carousel in your React Application
 Currently no CDN available
 ```
@@ -29,7 +34,9 @@ css CDN
 ```
 
 Package Manager
-`npm install a-carousel`
+```
+npm install a-carousel
+```
 
 
 ### To add additional styling to Carousel
@@ -65,6 +72,13 @@ Package Manager
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
 
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
+
+### FAQ
+These are some common issues people have with setting up and using the a-carousel module.
+
+### Error Messages
+| Error Number | Description |
+| ------------ | ----------- |
 
 
 
