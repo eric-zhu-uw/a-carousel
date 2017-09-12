@@ -37,10 +37,10 @@ A React Module simplifying UI Carousels
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
 | ❌ | speed | `number` | `0.3(s)` | any positive number | Determines the transition speed of the carousel slides in seconds |
 | ❌ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
-| ❌ | ... | ... | ... | ... | ... |
-| ❌ | ... | ... | ... | ... | ... |
-| ❌ | ... | ... | ... | ... | ... |
-| ❌ | ... | ... | ... | ... | ... |
+| ❌ | autoplay | `boolean` | `false` | true, false | Automatically scroll through the slides inside the carousel |
+| ❌ | autoplaySpeed | `number` | `3(s)` | any positive number | Determines the amount of time spent before moving to the next carousel slide |
+| ❌ | dots | `boolean` | `false` | true, false | Enable slide indicator dots to show the current slide |
+| ❌ | dotsClick | `boolean` | `true` | true, false | Enables indicator dots to be clickable to go to particular slide numbers |
 
 
 ### How to Contribute to the Project
