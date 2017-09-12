@@ -35,8 +35,8 @@ A React Module simplifying UI Carousels
 | ✅ | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
 | ❌ | arrowPosition | `string` | `outside` | outside, inside, bottom, below | Determines the location of the next/prev arrow placement |
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
-| ❌ | ... | ... | ... | ... | ... |
-| ❌ | ... | ... | ... | ... | ... |
+| ❌ | speed | `number` | `0.3(s)` | any positive number | Determines the transition speed of the slides in seconds |
+| ❌ | timing | `string` | `ease-in-out` | ... | Determines the transition timing function; can take any value from (https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp, "W3School CSS Transition-Timing-Property") |
 | ❌ | ... | ... | ... | ... | ... |
 | ❌ | ... | ... | ... | ... | ... |
 | ❌ | ... | ... | ... | ... | ... |
