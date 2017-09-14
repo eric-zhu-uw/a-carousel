@@ -1,0 +1,58 @@
+.forwardButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.backwardButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  z-index: 5;
+}
+
+// ========== arrowPosition Property ========== //
+
+.backwardButton-outside {
+  top: 50%;
+  left: -30px;
+}
+
+.backwardButton-inside {
+  top: 50%;
+  left: 30px;
+}
+
+.backwardButton-bottom {
+  bottom: 15px;
+  left: 45%;
+}
+
+.backwardButton-below {
+  bottom: -30px;
+  left: 45%;
+}
+
+.forwardButton-outside {
+  top: 50%;
+  right: -30px;
+}
+
+.forwardButton-inside {
+  top: 50%;
+  right: 30px;
+}
+
+.forwardButton-bottom {
+  bottom: 15px;
+  right: 45%;
+}
+
+.forwardButton-below {
+  bottom: -30px;
+  right: 45%;
+}
+
+// ============================================ //
