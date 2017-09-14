@@ -82,6 +82,13 @@ These are some common issues people have with setting up and using the a-carouse
 
 
 
-### How to Contribute to the Project
+## How to Contribute to the Project
 
-how to set up environment and tools
+### Environment Setup
+1. Clone the repository ```git clone https://github.com/eric-zhu-uw/a-carousel.git``` and navigate into the project
+2. ...
+3. ...
+4. ...
+
+### Best Coding Practices
+TDB
