@@ -61,7 +61,7 @@ npm install a-carousel
 | ✅ | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
 | ❌ | arrowPosition | `string` | `outside` | outside, inside, bottom, below | Determines the location of the next/prev arrow placement |
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
-| ❌ | speed | `number` | `0.3(s)` | any positive number | Determines the transition speed of the carousel slides in seconds |
+| ✅ | speed | `number` | `0.3(s)` | any positive number | Determines the transition speed of the carousel slides in seconds |
 | ❌ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
 | ❌ | autoplay | `boolean` | `false` | true, false | Automatically scroll through the slides inside the carousel |
 | ❌ | autoplaySpeed | `number` | `3(s)` | any positive number | Determines the amount of time spent before moving to the next carousel slide |

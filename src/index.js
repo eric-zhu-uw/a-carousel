@@ -50,6 +50,12 @@ export default class Carousel extends React.Component {
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      * ========================================================================================== */
+    this.multipleContainerStyle = {
+      width: this.multipleContainerWidth + this.widthSuffix,
+      transition: 'left 0.3s ease-in-out',
+      transitionProperty: 'left',
+      transitionDuration: this.speed + 's'
+    }
     this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
     this.forwardButtonClass = 'forwardButton' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
 
@@ -72,12 +78,6 @@ export default class Carousel extends React.Component {
   } // end of constructor
 
   render() {
-    this.multipleContainerStyle = {
-      width: this.multipleContainerWidth + this.widthSuffix,
-      transition: 'left 0.3s ease-in-out',
-      transitionProperty: 'left',
-      transitionDuration: this.speed + 's'
-    }
 
     let multipleContainerStateStyle = { 
       left: this.state.pos + this.widthSuffix,
