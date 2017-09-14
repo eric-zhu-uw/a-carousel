@@ -42,11 +42,12 @@ export default class Carousel extends React.Component {
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
     this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
+    this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
 
-    console.log(this.arrowPosition);
+    console.log(this.speed);
 
 
-    /* ==========================================================================================
+    /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      * ========================================================================================== */
     this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
@@ -66,24 +67,34 @@ export default class Carousel extends React.Component {
     this.state = {
       pos: -this.width,
       slide: 0,
-      transition: 'left 0.5s',
       translateX: 0,
     };
   } // end of constructor
 
   render() {
-    let multipleContainerStyle = { left: this.state.pos + this.widthSuffix, width: this.multipleContainerWidth + this.widthSuffix, transition: this.state.transition, transform: 'translateX(' + this.state.translateX + '%)' };
+    this.multipleContainerStyle = {
+      width: this.multipleContainerWidth + this.widthSuffix,
+      transition: 'left 0.3s ease-in-out',
+      transitionProperty: 'left',
+      transitionDuration: this.speed + 's'
+    }
+
+    let multipleContainerStateStyle = { 
+      left: this.state.pos + this.widthSuffix,
+      transition: this.state.transition,
+      transform: 'translateX(' + this.state.translateX + '%)'
+    };
+
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
       displayPosChild.push(<div className='displayPosChild' key={i} />);
     }
 
-
     return (
       <div style={{position: 'relative'}}>
         <div className='carousel'>
           <div className={ this.backwardButtonClass } onClick={this.backward} />
-          <div style={ multipleContainerStyle } className='multipleContainer'>
+          <div style={ Object.assign(this.multipleContainerStyle, multipleContainerStateStyle) } className='multipleContainer'>
             <div style={{ width: this.props.width, height: this.props.height }} className='container'>
               { this.props.children[this.props.children.length - 1] }
             </div>
