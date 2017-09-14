@@ -12,8 +12,12 @@ export default class Carousel extends React.Component {
     super(props);
 
     // Purpose: Validate the developer input to ensure 2+ children are inputted
-    if(this.props.children.length === undefined) {
-      throw 'Error 1: Must enter 2 or more children within the Carousel Component!';
+    if(this.props.children === undefined || this.props.children.length === undefined) {
+      throw new Error('[1] - Must enter 2 or more children within the Carousel Component!');
+    }
+
+    if(typeof(this.props.arrow) !== 'boolean' && this.props.arrow !== undefined) {
+      throw new Error('[2] - Must enter a boolean value for the <arrow> property');
     }
 
     //check more props here
@@ -44,9 +48,6 @@ export default class Carousel extends React.Component {
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
 
-    console.log(this.speed);
-
-
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      * ========================================================================================== */
@@ -56,8 +57,8 @@ export default class Carousel extends React.Component {
       transitionProperty: 'left',
       transitionDuration: this.speed + 's'
     }
-    this.backwardButtonClass = 'backwardButton' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
-    this.forwardButtonClass = 'forwardButton' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
+    this.backwardButtonClass = 'backwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
+    this.forwardButtonClass = 'forwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
 
     /* ==========================================================================================
      *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
