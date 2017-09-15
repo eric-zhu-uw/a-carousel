@@ -16,9 +16,31 @@ export default class Carousel extends React.Component {
       throw new Error('[1] - Must enter 2 or more children within the Carousel Component!');
     }
 
+    // Purpose: Check arrow property that it is a boolean or undefined
     if(typeof(this.props.arrow) !== 'boolean' && this.props.arrow !== undefined) {
       throw new Error('[2] - Must enter a boolean value for the <arrow> property');
     }
+
+    // Purpose: Check speed property that it is a number >= 0 or undefined
+    if((isNaN(this.props.speed) && this.props.speed !== undefined) || this.props.speed < 0) {
+      throw new Error('[3] - Must enter a number >= 0 for the <speed> property');
+    }
+
+    // Purpose: Check timing property that it is a string or undefined
+    if(typeof(this.props.timing) !== 'string' && this.props.timing !== undefined) {
+      throw new Error(`[4] - Must enter a valid css transition-timing-function for the <timing> property. Refer to
+        https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp`);
+    }
+
+    // Purpose: Check timing property that it is a valid transition-timing-function property
+    const cubicBezierRegex = new RegExp(/^cubic-bezier\((\s*0(\.\d+)?\s*,|\s*1(\.0+)?\s*,){3}(\s*0(\.\d+)?\s*|\s*1(\.0+)?)\s*\)$/);
+    const transitionTimingRegex = new RegExp(/^linear|ease|ease-in|ease-out|ease-in-out|initial|inherit$/);
+    if(typeof(this.props.timing) === 'string' && !this.props.timing.match(cubicBezierRegex) && !this.props.timing.match(transitionTimingRegex)) {
+      throw new Error(`[4] - Must enter a valid css transition-timing-function for the <timing> property. Refer to
+        https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp`);
+    }
+
+
 
     //check more props here
     /* ========================================================================================== */
@@ -47,14 +69,16 @@ export default class Carousel extends React.Component {
     this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
+    this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
 
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      * ========================================================================================== */
     this.multipleContainerStyle = {
       width: this.multipleContainerWidth + this.widthSuffix,
-      transition: 'left 0.3s ease-in-out',
+      transition: 'left 0.3s ease-in',
       transitionProperty: 'left',
+      transitionTimingFunction: this.timing,
       transitionDuration: this.speed + 's'
     }
     this.backwardButtonClass = 'backwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
@@ -79,12 +103,13 @@ export default class Carousel extends React.Component {
   } // end of constructor
 
   render() {
-
     let multipleContainerStateStyle = { 
       left: this.state.pos + this.widthSuffix,
       transition: this.state.transition,
       transform: 'translateX(' + this.state.translateX + '%)'
     };
+
+    let multipleContainerStyle = {...this.multipleContainerStyle, ...multipleContainerStateStyle };
 
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
@@ -95,7 +120,7 @@ export default class Carousel extends React.Component {
       <div style={{position: 'relative'}}>
         <div className='carousel'>
           <div className={ this.backwardButtonClass } onClick={this.backward} />
-          <div style={ Object.assign(this.multipleContainerStyle, multipleContainerStateStyle) } className='multipleContainer'>
+          <div style={ multipleContainerStyle } className='multipleContainerCarousel'>
             <div style={{ width: this.props.width, height: this.props.height }} className='container'>
               { this.props.children[this.props.children.length - 1] }
             </div>
