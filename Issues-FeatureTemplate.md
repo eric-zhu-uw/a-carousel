@@ -5,7 +5,7 @@ Follow this template when submitting issues/features to prevent ambiguity of pro
 
 #### Short description of the bug / issue, provide more detail below.
 One or two line summary of what the bug is or the new feature that should be implemented.
-...
+
 ...
 
 ====================================================================
@@ -14,7 +14,6 @@ One or two line summary of what the bug is or the new feature that should be imp
 
 A codepen or jsfiddle or text block so other's can try and replicate your errors.
 
-...
 ...
 
 ====================================================================
@@ -26,7 +25,6 @@ What should happen if the bug did not exist?
 Example of what you want the feature to be like?
 
 ...
-...
 
 ====================================================================
 
@@ -36,7 +34,6 @@ What happens as a result of the bug?
 
 What is the current implementation state of the desired feature?
 
-...
 ...
 
 ====================================================================
@@ -53,7 +50,6 @@ A list of other library's you are trying to implement with a-carousel?
 
 More fine grained information about what the new feature sould be like?
 
-...
 ...
 
 ====================================================================
