@@ -1,9 +1,8 @@
 import React from 'react';
 
 /* TO DO LIST
-1. update the buttons and give options to how to style the button... "side, inside the carousel, below the carousel"
-2. allow users to chose the button styling... 4-5 default types : hover animation
-3. Update so the circle selector is being updated based off <this.state.slide>
+1. Make it so it so it's optimized for React Production
+1. Remove comments and uglify the JS file
 
 */
 
@@ -22,8 +21,8 @@ export default class Carousel extends React.Component {
     }
 
     // Purpose: Check speed property that it is a number >= 0 or undefined
-    if((isNaN(this.props.speed) && this.props.speed !== undefined) || this.props.speed < 0) {
-      throw new Error('[3] - Must enter a number >= 0 for the <speed> property');
+    if((isNaN(this.props.speed) && this.props.speed !== undefined) || this.props.speed <= 0) {
+      throw new Error('[3] - Must enter a number > 0 for the <speed> property');
     }
 
     // Purpose: Check timing property that it is a string or undefined
@@ -45,6 +44,11 @@ export default class Carousel extends React.Component {
       throw new Error('[5] - Must enter a boolean value for the <autoplay> property');
     }
 
+     // Purpose: Check autoplaySpeed property that it is a number >= 0 or undefined
+    if((isNaN(this.props.autoplaySpeed) && this.props.autoplaySpeed !== undefined) || this.props.autoplaySpeed <= 0) {
+      throw new Error('[6] - Must enter a number > 0 for the <autoplaySpeed> property');
+    }
+
     //check more props here
     /* ========================================================================================== */
 
@@ -58,6 +62,7 @@ export default class Carousel extends React.Component {
      *  height: always 100 (can be updated later for more functionalities)
      *  widthSuffix: always % (can be updated later for more functionalities)
      *  heightSuffix: always % (can be updated later for more functionalities)
+     *
      *  arrow: Enable the next and previous buttons
      *    ~| type: boolean | default: true |
      *
@@ -69,6 +74,9 @@ export default class Carousel extends React.Component {
      *  autoplay: Enable automatic scrolling of slides
      *    ~| type: boolean | default: false |
      *
+     *  autoplaySpeed: the speed in (s) in which the slider automatically changes
+     *    ~| type: string | default: 3 |
+     *
      *  speed: the speed in (s) in which the silder changes
      *    ~| type: number | default: 0.3seconds |
      *
@@ -77,6 +85,7 @@ export default class Carousel extends React.Component {
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
+    this.autoplayCarousel = this.autoplayCarousel.bind(this);
     this.numSlides = this.props.children.length + 2;
     this.multipleContainerWidth = this.numSlides * 100;
     this.width = 100;
@@ -84,12 +93,12 @@ export default class Carousel extends React.Component {
     this.widthSuffix = '%';
     this.heightSuffix = '%';
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
-    this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
+    this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
+    this.autoplay = this.props.autoplay === undefined ? false : this.props.autoplay;
+    this.autoplaySpeed = this.props.autoplaySpeed === undefined ? 3000 : this.props.autoplaySpeed * 1000;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
     this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
-    this.autoplay = this.props.autoplay === undefined ? false : this.props.autoplay;
-
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      *  forwarrdButtonClass: classNames for the forwards button
@@ -105,22 +114,24 @@ export default class Carousel extends React.Component {
     this.forwardButtonClass = 'forwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
 
     /* ==========================================================================================
-     *  numWidth: gets the <Int> from this.props.width |~ Default: 100%
-     *  numHeight: gets the <Int> from this.props.height |~ Default: 100%
      *  pos:
      *  slide:
-     *  width:
-     *  height:
-     *  widthSuffix:
-     *  heightSuffix:
-     *  multipleContainerWidth:
+     *  translateX:
      * ========================================================================================== */
     this.state = {
       pos: -this.width,
       slide: 0,
       translateX: 0,
     };
+
+
   } // end of constructor
+
+  componentDidMount() {
+    if(this.autoplay) {
+      this.autoplayCarousel();
+    }
+  }
 
   render() {
     let multipleContainerStateStyle = { 
@@ -212,4 +223,15 @@ export default class Carousel extends React.Component {
       return { pos: prevState.pos + this.width };
     })
   } //end of backward
+
+  /* ==========================================================================================
+   * Purpose: If the autoplay property is selected, this function will execute on an interval basis
+   *          based of the autplaySpeed property
+   * @ Params: n/a
+   * @ Return: n/a
+   * @ Error: n/a
+   * ========================================================================================== */
+  autoplayCarousel() {
+    setInterval(() => { this.forward(); }, this.autoplaySpeed);
+  }
 } //end of Carousel Class

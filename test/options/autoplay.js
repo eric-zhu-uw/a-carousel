@@ -34,23 +34,6 @@ describe('Autoplay Option Testing', () => {
   });
 
   describe('Functionality', () => {
-    describe('Autoplay Off', () => {
-      const component = (<Carousel autoplay={true}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
-
-    })
-
-    describe('Autoplay On', () => {
-      it('default autoplay', () => {
-        const component = (<Carousel autoplay={true}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
-        const wrapper = shallow(component);
-        expect(wrapper.instance().autoplay());
-      });
-
-      it('Show back button if arrow={true}', () => {
-        const component = (<Carousel arrow={true}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
-        const wrapper = shallow(component);
-        expect(wrapper.instance().autoplay());
-      });
-    });
+    // not sure how to unit test effectively
   });
 });

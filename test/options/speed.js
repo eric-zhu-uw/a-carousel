@@ -25,6 +25,11 @@ describe('Speed Option Testing', () => {
       expect(() => { shallow(component) }).to.throw(Error);
     });
 
+    it('speed={0}', () => {
+      const component = (<Carousel speed={0}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
+      expect(() => { shallow(component) }).to.throw(Error);
+    });
+
     it('arrow={invalid entry}', () => {
       const component = (<Carousel arrow='invalid-string-entry'> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
       expect(() => { shallow(component) }).to.throw(Error);
