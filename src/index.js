@@ -40,12 +40,15 @@ export default class Carousel extends React.Component {
         https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp`);
     }
 
-
+    // Purpose: Check autoplay property that it is a boolean or undefined
+    if(typeof(this.props.autoplay) !== 'boolean' && this.props.autoplay !== undefined) {
+      throw new Error('[5] - Must enter a boolean value for the <autoplay> property');
+    }
 
     //check more props here
     /* ========================================================================================== */
 
-
+    // MUST ARRANGE SHIT ALPHABETICALLY
     /* ==========================================================================================
      *  forward: Keep context of <this> forward() function in the class regardless of invocation location
      *  backward: Keep context of <this> backward() function in the class regardless of invocation location
@@ -56,6 +59,21 @@ export default class Carousel extends React.Component {
      *  widthSuffix: always % (can be updated later for more functionalities)
      *  heightSuffix: always % (can be updated later for more functionalities)
      *  arrow: Enable the next and previous buttons
+     *    ~| type: boolean | default: true |
+     *
+     *  arrowPosition: the positioning of the navigation arrows
+     *    ~| type: string | default: 'outside' |
+     *
+     *  arrowStyle: ...!?!?!?!?
+     *
+     *  autoplay: Enable automatic scrolling of slides
+     *    ~| type: boolean | default: false |
+     *
+     *  speed: the speed in (s) in which the silder changes
+     *    ~| type: number | default: 0.3seconds |
+     *
+     *  timing: the type of transition style based of CSS property transition-timing-function
+     *    ~| type: string | default: 'ease-in' |
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -70,9 +88,11 @@ export default class Carousel extends React.Component {
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
     this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
+    this.autoplay = this.props.autoplay === undefined ? false : this.props.autoplay;
 
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
+     *  forwarrdButtonClass: classNames for the forwards button
      * ========================================================================================== */
     this.multipleContainerStyle = {
       width: this.multipleContainerWidth + this.widthSuffix,
