@@ -1,11 +1,12 @@
 # How to Contribute to the Project
----
 This is an open-source project to simplify React Carousel's. All contributions are welcome
 as long as they follow the following requirements.
 
 You can contact me at ericzhu77@gmail.com
 
 Goodluck and happy coding! :)
+
+---
 
 ### Environment Setup & Scripts
 
