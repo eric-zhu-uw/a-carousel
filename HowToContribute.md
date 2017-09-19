@@ -22,3 +22,5 @@ Goodluck and happy coding! :)
 3. Ensured there are 0 linting errors and/or warnings
 4. If implementing new features, ensure validation is created
 5. Write inline documentation for new class variables or class methods
+
+---
