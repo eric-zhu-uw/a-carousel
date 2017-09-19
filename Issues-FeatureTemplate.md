@@ -2,29 +2,29 @@
 Follow this template when submitting issues/features to prevent ambiguity of problem
 
 ====================================================================
-#### short description of the bug / issue, provide more detail below.
+Short description of the bug / issue, provide more detail below.
 One or two line summary of what the bug is or the new feature that should be implemented.
 ...
 ...
 ====================================================================
-#### Steps to reproduce the problem
+Steps to reproduce the problem
 A codepen or jsfiddle or text block so other's can try and replicate your errors.
 ...
 ...
 ====================================================================
-#### What is the expected behaviour?
+What is the expected behaviour?
 What should happen if the bug did not exist?
 Example of what you want the feature to be like?
 ...
 ...
 ====================================================================
-#### What is observed behaviour?
+What is observed behaviour?
 What happens as a result of the bug?
 What is the current implementation state of the desired feature?
 ...
 ...
 ====================================================================
-#### More Details
+More Details
 Which browsers/versions does it happen on?
 Which React/ReactDom/a-carousel version are you using?
 Did this work before?
