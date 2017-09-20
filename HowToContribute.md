@@ -15,10 +15,9 @@ Goodluck and happy coding! :)
 `node -v` and `npm -v` 
 2. Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) Check with `ruby -v`
 3. Install [SASS](http://sass-lang.com/install) Check with `sass -v`
-4.
-5. Run test suite ```npm run test``` or ```yarn test```
-6. Run eslint to standardize coding style ```npm run lint``` or ```yarn lint```
-7. Run grunt to build the project ```grunt```
+4. Run test suite ```npm run test``` or ```yarn test```
+5. Run eslint to standardize coding style ```npm run lint``` or ```yarn lint```
+6. Run grunt to build the project ```grunt```
 
 ### Requirements before your PR
 
