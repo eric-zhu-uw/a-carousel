@@ -3,8 +3,6 @@
 ### Description
 A React Project to simplify UI Carousels
 
-#### Demo
-
 [Examples of a-carousel](#)
 
 ----------------------
