@@ -62,6 +62,17 @@ export default class Carousel extends React.Component {
     }
 
 
+    // Purpose: Check arrowStyleForward property that it is a string or undefined
+    if(typeof(this.props.arrowStyleBackward) !== 'string' && this.props.arrowStyleBackward !== undefined) {
+      throw new Error('[8] - Must enter a string value for the <arrowStyleBackward> property');
+    }
+
+
+    // Purpose: Check arrowStyleForward property that it is a string or undefined
+    if(typeof(this.props.arrowStyleForward) !== 'string' && this.props.arrowStyleForward !== undefined) {
+      throw new Error('[9] - Must enter a string value for the <arrowStyleForward> property');
+    }
+
 
     //check more props here
     /* ========================================================================================== */
@@ -83,7 +94,11 @@ export default class Carousel extends React.Component {
      *  arrowPosition: the positioning of the navigation arrows
      *    ~| type: string | default: 'outside' |
      *
-     *  arrowStyle: ...!?!?!?!?
+     *  arrowStyleBackward: the classname of the backwards navigation arrow
+     *    ~| type: string | default: 'default' |
+     *
+     *  arrowStyleForward: the classname of the forwards navigation arrow
+     *    ~| type: string | default: 'default' |
      *
      *  autoplay: Enable automatic scrolling of slides
      *    ~| type: boolean | default: false |
@@ -108,7 +123,8 @@ export default class Carousel extends React.Component {
     this.heightSuffix = '%';
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
     this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
-    this.arrowStyle = this.props.arrow === undefined ? true : this.props.arrowStyle;
+    this.arrowStyleBackward = this.props.arrowStyleBackward === undefined ? 'default' : this.props.arrowStyleBackward;
+    this.arrowStyleForward = this.props.arrowStyleForward === undefined ? 'default' : this.props.arrowStyleForward;
     this.autoplay = this.props.autoplay === undefined ? false : this.props.autoplay;
     this.autoplaySpeed = this.props.autoplaySpeed === undefined ? 3000 : this.props.autoplaySpeed * 1000;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
@@ -124,8 +140,9 @@ export default class Carousel extends React.Component {
       transitionTimingFunction: this.timing,
       transitionDuration: this.speed + 's'
     }
-    this.backwardButtonClass = 'backwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' backwardButton-' + this.arrowPosition);
-    this.forwardButtonClass = 'forwardButtonCarousel' + (this.arrow ? '' : ' hideElement') + (' forwardButton-' + this.arrowPosition);
+    this.backwardButtonClass = `backwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'backwardButton-' + this.arrowPosition} ${this.arrowStyleBackward === 'default' ? 'backwardButtonStyle' : this.arrowStyleBackward}`;
+    console.log(this.backwardButtonClass);
+    this.forwardButtonClass = `forwardButtonCarousel ${this.arrow ? '' : ' hideElement'} ${'forwardButton-' + this.arrowPosition} ${this.arrowStyleForward === 'default' ? 'forwardButtonStyle' : this.arrowStyleForward}`;
 
     /* ==========================================================================================
      *  pos:

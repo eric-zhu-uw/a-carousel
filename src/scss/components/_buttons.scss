@@ -1,21 +1,11 @@
 .forwardButtonCarousel {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: black;
-  border: none;
   z-index: 5;
-  outline: none;
 }
 
 .backwardButtonCarousel {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: black;
-  border: none;
   z-index: 5;
-  outline: none;
 }
 
 // ========== arrowPosition Property ========== //
@@ -61,3 +51,25 @@
 }
 
 // ============================================ //
+// ======= Arrow Style Backward Property ====== //
+
+.backwardButtonStyle {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.forwardButtonStyle {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+
+// ============================================ //
+
+
