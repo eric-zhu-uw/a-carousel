@@ -8,11 +8,6 @@ npm publish
 npm link
 npm link <pkg-name> in the testing folder
 
-
-How to include the CSS file...
-1. either use webpack & load it in..
-2. import the file directly
-
 # A Carousel
 A React Module simplifying UI Carousels
 
@@ -21,17 +16,14 @@ This is not the first carousel module nor the last carousel module you'll see. B
 
 ### Examples of the Carousel 
 ```
-some link to something
+[Examples of a-carousel](#)
 ```
 
 ### Setup a-carousel in your React Application
-Currently no CDN available
-```
-javascript CDN
-```
-```
-css CDN
-```
+
+How to include the CSS file...
+1. either use webpack & load it in..
+2. import the file directly
 
 Package Manager
 ```
