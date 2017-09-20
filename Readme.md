@@ -38,9 +38,9 @@ code example goes here
 
 ### Options
 
-<center>
+
 | Done | Property | Type | Default | Values | Description |
-| ---- | -------- | ---- | ------- | ------ | ----------- |
+| :--: | :------: | :--: | :-----: | :----: | :---------: |
 | ❌ | accessability | `boolean` | `true` | true<br>false | ...FIX!!! Enables tabbing and arrow key navigation. Unless autoplay: true, sets browser focus to current slide (or first of current slide set, if multiple slidesToShow) after slide change. For full a11y compliance enable focusOnChange in addition to this. |
 | ✅ | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
 | ✅ | arrowPosition | `string` | `outside` | outside<br>inside<br>bottom<br>below | Determines the location of the next/prev arrow placement |
@@ -55,7 +55,6 @@ code example goes here
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
 | ❌ | ... | ... | ... | ... | ... |
 | ❌ | ... | ... | ... | ... | ... |
-</center>
 
 ### To add additional styling to Carousel
 
