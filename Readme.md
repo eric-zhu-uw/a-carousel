@@ -12,7 +12,7 @@ A React Project to simplify UI Carousels
 #### Package Manager
 
 ```
-// npm
+*// npm*
 npm install a-carousel
 
 // yarn
@@ -51,10 +51,8 @@ code example goes here
 | ❌ | dots | `boolean` | `false` | true, false | Enable slide indicator dots to show the current slide |
 | ❌ | dotsClick | `boolean` | `true` | true, false | Enables indicator dots to be clickable to go to particular slide numbers |
 | ❌ | touch | `boolean` | `true` | true, false | Enabled touch scrolling of the carousel |
-
-| ❌ | arrowStyle | `string` | `arrow` | ... | ... |
-
-| ❌ | arrowStyle | `string` | `arrow` | ... | ... |
+| ❌ | ... | ... | ... | ... | ... |
+| ❌ | ... | ... | ... | ... | ... |
 
 ### To add additional styling to Carousel
 
