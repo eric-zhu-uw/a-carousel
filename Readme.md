@@ -43,7 +43,7 @@ code example goes here
 | ❌ | accessability | `boolean` | `true` | true, false | ...FIX!!! Enables tabbing and arrow key navigation. Unless autoplay: true, sets browser focus to current slide (or first of current slide set, if multiple slidesToShow) after slide change. For full a11y compliance enable focusOnChange in addition to this. |
 | ✅ | arrow | `boolean` | `true` | true, false | Enable the next and previous buttons on the carousel |
 | ✅ | arrowPosition | `string` | `outside` | outside, inside, bottom, below | Determines the location of the next/prev arrow placement |
-| ❌ | arrowStyleBackward | `string` | `default` | default, <classname> | Applies the default styling or a custom classname for styling to the backward arrow  |
+| ❌ | arrowStyleBackward | `string` | `default` | default, \<classname\> | Applies the default styling or a custom classname for styling to the backward arrow  |
 | ❌ | arrowStyleForward | `string` | `default` | default, <classname> | Applies the default styling or a custom classname for styling to the forward arrow |
 | ✅ | autoplay | `boolean` | `false` | true, false | Automatically scroll through the slides inside the carousel |
 | ✅ | autoplaySpeed | `number` | `3(s)` | any positive number | Determines the amount of time spent before moving to the next carousel slide |
