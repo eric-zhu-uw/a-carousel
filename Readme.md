@@ -9,7 +9,7 @@ A React Project to simplify UI Carousels
 
 ### Setup a-carousel
 
-####Package Manager
+#### Package Manager
 
 ```
 // npm
@@ -34,22 +34,7 @@ code example goes here
 ```
 code example goes here
 ```
-
-
-
-### To add additional styling to Carousel
-
-| Element | Classname |
-| ------- | --------- |
-| Previous Slide Button | backwardButton |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-
+----------------------
 
 ### Options
 
@@ -70,6 +55,20 @@ code example goes here
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
 
 | ❌ | arrowStyle | `string` | `arrow` | ... | ... |
+
+### To add additional styling to Carousel
+
+| Element | Classname |
+| ------- | --------- |
+| Previous Slide Button | backwardButton |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+
 
 ### FAQ
 These are some common issues people have with setting up and using the a-carousel module.
