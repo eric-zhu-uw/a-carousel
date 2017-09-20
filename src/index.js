@@ -49,6 +49,20 @@ export default class Carousel extends React.Component {
       throw new Error('[6] - Must enter a number > 0 for the <autoplaySpeed> property');
     }
 
+
+    // Purpose: Check arrowPosition property that is a string or undefined
+    if(typeof(this.props.arrowPosition) !== 'string' && this.props.arrowPosition !== undefined) {
+      throw new Error('[7] - Must enter a valid string value from documentation for the <arrowPosition> property');
+    }
+
+    // Purpose: Check arrowPosition property that it is a a valid property according to the documentation
+    const arrowPositionRegex = new RegExp(/^outside|inside|bottom|below$/);
+    if(typeof(this.props.arrowPosition) === 'string' && !this.props.arrowPosition.match(arrowPositionRegex)) {
+      throw new Error('[7] - Must enter a valid string value from documentation for the <arrowPosition> property')
+    }
+
+
+
     //check more props here
     /* ========================================================================================== */
 
@@ -150,7 +164,7 @@ export default class Carousel extends React.Component {
     return (
       <div style={{position: 'relative'}}>
         <div className='carousel'>
-          <div className={ this.backwardButtonClass } onClick={this.backward} />
+          <button className={ this.backwardButtonClass } onClick={this.backward} />
           <div style={ multipleContainerStyle } className='multipleContainerCarousel'>
             <div style={{ width: this.props.width, height: this.props.height }} className='container'>
               { this.props.children[this.props.children.length - 1] }
@@ -169,7 +183,7 @@ export default class Carousel extends React.Component {
             </div>
           </div>
         </div>
-        <div className={ this.forwardButtonClass } onClick={this.forward} />
+        <button className={ this.forwardButtonClass } onClick={this.forward} />
         <div className='displayPos'>
           { displayPosChild }
         </div>

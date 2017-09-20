@@ -3,6 +3,8 @@
   width: 30px;
   height: 30px;
   background-color: black;
+  border: none;
+  z-index: 5;
 }
 
 .backwardButtonCarousel {
@@ -10,49 +12,50 @@
   width: 30px;
   height: 30px;
   background-color: black;
+  border: none;
   z-index: 5;
 }
 
 // ========== arrowPosition Property ========== //
 
 .backwardButton-outside {
-  top: 50%;
-  left: -30px;
+  top: calc(50% - 15px);
+  left: -35px;
 }
 
 .backwardButton-inside {
-  top: 50%;
-  left: 30px;
+  top: calc(50% - 15px);
+  left: 10px;
 }
 
 .backwardButton-bottom {
-  bottom: 15px;
-  left: 45%;
+  bottom: 25px;
+  left: calc(50% - 50px);
 }
 
 .backwardButton-below {
-  bottom: -30px;
-  left: 45%;
+  bottom: -25px;
+  left: calc(50% - 50px);
 }
 
 .forwardButton-outside {
-  top: 50%;
-  right: -30px;
+  top: calc(50% - 15px);
+  right: -35px;
 }
 
 .forwardButton-inside {
-  top: 50%;
-  right: 30px;
+  top: calc(50% - 15px);
+  right: 10px;
 }
 
 .forwardButton-bottom {
-  bottom: 15px;
-  right: 45%;
+  bottom: 25px;
+  right: calc(50% - 50px);
 }
 
 .forwardButton-below {
-  bottom: -30px;
-  right: 45%;
+  bottom: -25px;
+  right: calc(50% - 50px);
 }
 
 // ============================================ //
