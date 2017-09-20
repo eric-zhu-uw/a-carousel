@@ -12,7 +12,7 @@ A React Project to simplify UI Carousels
 #### Package Manager
 
 ```
-*// npm*
+// npm
 npm install a-carousel
 
 // yarn
