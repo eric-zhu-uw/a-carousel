@@ -11,10 +11,10 @@ Goodluck and happy coding! :)
 ### Environment Setup & Scripts
 
 1. Clone the repository ```git clone https://github.com/eric-zhu-uw/a-carousel.git``` and navigate into the project
-3. Install (NodeJS)[https://nodejs.org/en/download/] and (NPM)[https://www.npmjs.com/get-npm]. Check with
+3. Install [NodeJS](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/get-npm). Check with
 `node -v` and `npm -v` 
-2. Install (Ruby)[https://www.ruby-lang.org/en/documentation/installation/] Check with `ruby -v`
-3. Install (SASS)[http://sass-lang.com/install] Check with `sass -v`
+2. Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) Check with `ruby -v`
+3. Install [SASS](http://sass-lang.com/install) Check with `sass -v`
 4.
 5. Run test suite ```npm run test``` or ```yarn test```
 6. Run eslint to standardize coding style ```npm run lint``` or ```yarn lint```
