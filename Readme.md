@@ -9,19 +9,32 @@ A React Project to simplify UI Carousels
 
 ### Setup a-carousel
 
-Package Manager
+####Package Manager
+
 ```
-#npm
+// npm
 npm install a-carousel
 
-#yarn
+// yarn
 yarn add a-carousel
 ```
 
+#### Include the CSS file
 
-### Include the CSS file
 1. either use webpack & load it in..
 2. import the file directly
+
+```
+code example goes here
+```
+
+
+#### Example
+ 
+```
+code example goes here
+```
+
 
 
 ### To add additional styling to Carousel
