@@ -11,9 +11,13 @@ Goodluck and happy coding! :)
 ### Environment Setup & Scripts
 
 1. Clone the repository ```git clone https://github.com/eric-zhu-uw/a-carousel.git``` and navigate into the project
-2. Run test suite ```npm run test``` or ```yarn test```
-3. Run eslint to standardize coding style ```npm run lint``` or ```yarn lint```
-4. Run grunt to build the project ```grunt```
+3. Install [NodeJS](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/get-npm). Check with
+`node -v` and `npm -v` 
+2. Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) Check with `ruby -v`
+3. Install [SASS](http://sass-lang.com/install) Check with `sass -v`
+4. Run test suite ```npm run test``` or ```yarn test```
+5. Run eslint to standardize coding style ```npm run lint``` or ```yarn lint```
+6. Run grunt to build the project ```grunt```
 
 ### Requirements before your PR
 
