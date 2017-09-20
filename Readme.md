@@ -1,16 +1,13 @@
 # A Carousel
-A React Module simplifying UI Carousels
 
 ### Description
-Carousels are notorious for being glitchy and hard to manipulate. *A-carousel* is the first carousel
-focused on simplicity and efficiency to turn your carousel nightmares into workable UI masterpieces.
+A React Project to simplify UI Carousels
 
-### Examples of the Carousel
+#### Demo
 
 [Examples of a-carousel](#)
 
 ----------------------
-
 
 ### Setup a-carousel in your React Application
 
