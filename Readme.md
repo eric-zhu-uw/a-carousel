@@ -1,23 +1,16 @@
-1. peer dependencies
-
-
-npm version
-npm publish
-
-
-npm link
-npm link <pkg-name> in the testing folder
-
 # A Carousel
 A React Module simplifying UI Carousels
 
 ### Description
-This is not the first carousel module nor the last carousel module you'll see. But a-carousel is the first module focused on responsive design, simplicity and robustness to turn your carousel nightmares into workable UI masterpieces.
+Carousels are notorious for being glitchy and hard to manipulate. *A-carousel* is the first carousel
+focused on simplicity and efficiency to turn your carousel nightmares into workable UI masterpieces.
 
-### Examples of the Carousel 
-```
+### Examples of the Carousel
+
 [Examples of a-carousel](#)
-```
+
+----------------------
+
 
 ### Setup a-carousel in your React Application
 
