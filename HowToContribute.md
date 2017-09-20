@@ -20,7 +20,9 @@ Goodluck and happy coding! :)
 1. A valid feature or issue that has been approved
 2. Written unit tests and ensured that no previous test cases fail because of the PR
 3. Ensured there are 0 linting errors and/or warnings
-4. If implementing new features, ensure validation is created
+4. If implementing new features
+  * Ensure validation is created
+  * Update readme file with error messages and feature descriptions
 5. Write inline documentation for new class variables or class methods
 
 ---
