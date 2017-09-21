@@ -34,20 +34,20 @@ describe('Arrow Style Backward Option Testing', () => {
   });
 
   describe('Functionality', () => {
-    describe('Back Button Class', () => {
-      it('add default backwardButtonStyle class when default option; no props', () => {
+    describe('Back Button Style Class', () => {
+      it('default option; no props', () => {
         const component = (<Carousel> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
         const wrapper = shallow(component);
         expect(wrapper.find('.backwardButtonCarousel').hasClass('backwardButtonStyle')).to.be.true;
       });
 
-      it("add default backwardButtonStyle class when arrowStyleBackward='default'", () => {
+      it("arrowStyleBackward='default'", () => {
         const component = (<Carousel arrowStyleBackward='default'> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
         const wrapper = shallow(component);
         expect(wrapper.find('.backwardButtonCarousel').hasClass('backwardButtonStyle')).to.be.true;
       });
 
-      it("add custom class when arrowStyleBackward='custom-class-name'", () => {
+      it("arrowStyleBackward='custom-class-name'", () => {
         const component = (<Carousel arrowStyleBackward='custom-class-name'> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
         const wrapper = shallow(component);
         expect(wrapper.find('.backwardButtonCarousel').hasClass('custom-class-name')).to.be.true;
