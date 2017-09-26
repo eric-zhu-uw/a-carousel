@@ -25,7 +25,7 @@ yarn add a-carousel
 2. import the file directly
 
 ```
-code example goes here
+ <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
 
 
