@@ -79,8 +79,7 @@ These are some common issues people have with setting up and using the a-carouse
 | [1] | Must have 2 or more children elements within the Carousel Component to be considered valid |
 | [2] | Must enter a `boolean` for the <arrow> property |
 | [3] | Must enter a `number > 0` for the <speed> property |
-| [4] | Must enter a valid CSS-transition-timing-function. Refer to
-        https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp |
+| [4] | Must enter a valid CSS-transition-timing-function. Refer to https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp |
 | [5] | Must enter a `boolean` for the <autoplay> property |
 | [6] | Must enter a `number > 0` for the <autoplaySpeed> property |
 | [7] | Must enter one of: outside, inside, bottom, below` |
