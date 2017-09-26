@@ -1,0 +1,18 @@
+.dotsCarousel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.dotsChildren {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 20px;
+}
+
+.dotsChildren:hover {
+  background-color: black;
+}

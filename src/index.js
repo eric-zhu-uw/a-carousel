@@ -73,11 +73,16 @@ export default class Carousel extends React.Component {
       throw new Error('[9] - Must enter a string value for the <arrowStyleForward> property');
     }
 
+    // Purpose: Check dots property that it is a boolean or undefined
+    if(typeof(this.props.dots) !== 'boolean' && this.props.dots !== undefined) {
+      throw new Error('[10] - Must enter a boolean value for the <dots> property');
+    }
+
+
 
     //check more props here
     /* ========================================================================================== */
 
-    // MUST ARRANGE SHIT ALPHABETICALLY
     /* ==========================================================================================
      *  forward: Keep context of <this> forward() function in the class regardless of invocation location
      *  backward: Keep context of <this> backward() function in the class regardless of invocation location
@@ -111,6 +116,8 @@ export default class Carousel extends React.Component {
      *
      *  timing: the type of transition style based of CSS property transition-timing-function
      *    ~| type: string | default: 'ease-in' |
+     *  dots: Enable the nagivation dots
+     *    ~| type: boolean | default: true |
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -129,9 +136,11 @@ export default class Carousel extends React.Component {
     this.autoplaySpeed = this.props.autoplaySpeed === undefined ? 3000 : this.props.autoplaySpeed * 1000;
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
     this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
+    this.dots = this.props.dots === undefined ? true : this.props.dots;
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      *  forwarrdButtonClass: classNames for the forwards button
+     *  dotsClass: classNames for the navigation dots
      * ========================================================================================== */
     this.multipleContainerStyle = {
       width: this.multipleContainerWidth + this.widthSuffix,
@@ -141,9 +150,9 @@ export default class Carousel extends React.Component {
       transitionDuration: this.speed + 's'
     }
     this.backwardButtonClass = `backwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'backwardButton-' + this.arrowPosition} ${this.arrowStyleBackward === 'default' ? 'backwardButtonStyle' : this.arrowStyleBackward}`;
-    console.log(this.backwardButtonClass);
-    this.forwardButtonClass = `forwardButtonCarousel ${this.arrow ? '' : ' hideElement'} ${'forwardButton-' + this.arrowPosition} ${this.arrowStyleForward === 'default' ? 'forwardButtonStyle' : this.arrowStyleForward}`;
-
+    this.forwardButtonClass = `forwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'forwardButton-' + this.arrowPosition} ${this.arrowStyleForward === 'default' ? 'forwardButtonStyle' : this.arrowStyleForward}`;
+    this.dotsClass = `dotsCarousel ${this.dots ? '' : 'hideElement'}`;
+    
     /* ==========================================================================================
      *  pos:
      *  slide:
@@ -154,8 +163,6 @@ export default class Carousel extends React.Component {
       slide: 0,
       translateX: 0,
     };
-
-
   } // end of constructor
 
   componentDidMount() {
@@ -175,7 +182,7 @@ export default class Carousel extends React.Component {
 
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
-      displayPosChild.push(<div className='displayPosChild' key={i} />);
+      displayPosChild.push(<div className='dotsChildren' key={i} />);
     }
 
     return (
@@ -201,7 +208,7 @@ export default class Carousel extends React.Component {
           </div>
         </div>
         <button className={ this.forwardButtonClass } onClick={this.forward} />
-        <div className='displayPos'>
+        <div className={this.dotsClass}>
           { displayPosChild }
         </div>
       </div>

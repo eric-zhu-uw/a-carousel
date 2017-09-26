@@ -1,11 +1,9 @@
 // ============ GLOBAL STYLES ============ //
-.hideElement {
-  display: none;
-}
 
 // ======================================= //
 
 @import 'components/buttons';
+@import 'components/dots';
 
 .carousel {
   overflow: hidden;
@@ -30,21 +28,8 @@
   height: 100%;
 }
 
-.displayPos {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+// =========== GLOBAL OVERRIDE =========== //
+.hideElement {
+  display: none;
 }
-
-.displayPosChild {
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid black;
-  margin: 0 20px;
-}
-
-.displayPosChild:hover {
-  background-color: black;
-}
+// ======================================= //
