@@ -65,9 +65,6 @@ code example goes here
 | Navigation Dots | `dotsCarousel` |
 | ... | ... |
 | ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
 
 
 ### FAQ
@@ -86,24 +83,3 @@ These are some common issues people have with setting up and using the a-carouse
 | [8] | Must enter a `string` for the **arrowStyleBackward** property |
 | [9] | Must enter a `string` for the **arrowStyleForward** property |
 | [10] | Must enter a `boolean` for the **dots** property  |
-
-
-
-
-
-
-    // Purpose: Check arrowStyleForward property that it is a string or undefined
-    if(typeof(this.props.arrowStyleBackward) !== 'string' && this.props.arrowStyleBackward !== undefined) {
-      throw new Error('[8] - Must enter a string value for the <arrowStyleBackward> property');
-    }
-
-
-    // Purpose: Check arrowStyleForward property that it is a string or undefined
-    if(typeof(this.props.arrowStyleForward) !== 'string' && this.props.arrowStyleForward !== undefined) {
-      throw new Error('[9] - Must enter a string value for the <arrowStyleForward> property');
-    }
-
-    // Purpose: Check dots property that it is a boolean or undefined
-    if(typeof(this.props.dots) !== 'boolean' && this.props.dots !== undefined) {
-      throw new Error('[10] - Must enter a boolean value for the <dots> property');
-    }
