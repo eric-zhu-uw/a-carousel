@@ -51,7 +51,7 @@ code example goes here
 | ✅ | speed | `number` | `0.3(s)` | any number > 0 | Determines the transition speed of the carousel slides in seconds |
 | ✅ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
 | ✅ | dots | `boolean` | `false` | true<br>false | Enable slide navigation dots to show the current slide |
-| ❌ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
+| ✅ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
 | ❌ | dotsStyle | `string` | `default` | default<br>\<classname\> | Applies the default styling or a custom classname for styling the dots navigation |
 | ❌ | dotsPosition | `string` | `below` | bottom<br>below | Determines the location of the dots navigation. Can be overrided by dotsStyle and adding position styling attributes |
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
@@ -59,7 +59,9 @@ code example goes here
 | ❌ | z-index| `number` | ... | ... | Sets the z-index of the carousel |
 | ❌ | infinite | `boolean` | `true` | true<br>false | Determines if you can scroll infinitely through the slides |
 | ❌ | initial-slide | `number` | 0 | 0 < number < # of slides | Determines which slide the carousel starts on |
+| ❌ | allowButtonSpam | `boolean` | `false` | true<br>false | Determines if you can spam click the forward/backward button or if you need to wait for the animation to finish |
 | ❌ | ... | ... | ... | ... | ... |
+
 
 ### To add additional styling to Carousel
 
@@ -88,3 +90,4 @@ These are some common issues people have with setting up and using the a-carouse
 | [8] | Must enter a `string` for the **arrowStyleBackward** property |
 | [9] | Must enter a `string` for the **arrowStyleForward** property |
 | [10] | Must enter a `boolean` for the **dots** property  |
+| [11] | just enter a boolean value for the **dotsClick** property |

@@ -78,6 +78,11 @@ export default class Carousel extends React.Component {
       throw new Error('[10] - Must enter a boolean value for the <dots> property');
     }
 
+    // Purpose: Check dotsClick property that it is a boolean or undefined
+    if(typeof(this.props.dotsClick) !== 'boolean' && this.props.dotsClick !== undefined) {
+      throw new Error('[11] - Must enter a boolean value for the <dotsClick> property');
+    }
+
 
 
     //check more props here
@@ -118,9 +123,12 @@ export default class Carousel extends React.Component {
      *    ~| type: string | default: 'ease-in' |
      *  dots: Enable the nagivation dots
      *    ~| type: boolean | default: true |
+     *  dotsClick: Enable if you can navigate slides with the navigation dots
+     *    ~| type: boolean | default: true |
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
+    this.moveSlide = this.moveSlide.bind(this);
     this.autoplayCarousel = this.autoplayCarousel.bind(this);
     this.numSlides = this.props.children.length + 2;
     this.multipleContainerWidth = this.numSlides * 100;
@@ -137,6 +145,8 @@ export default class Carousel extends React.Component {
     this.speed = this.props.speed === undefined ? 0.3 : this.props.speed;
     this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
     this.dots = this.props.dots === undefined ? true : this.props.dots;
+    this.dotsClick = this.props.dotsClick === undefined ? true : this.props.dotsClick;
+
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
      *  forwarrdButtonClass: classNames for the forwards button
@@ -182,7 +192,8 @@ export default class Carousel extends React.Component {
 
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
-      displayPosChild.push(<div className='dotsChildren' key={i} />);
+      let moveSlide = this.moveSlide.bind(this, i);
+      displayPosChild.push(<div className='dotsChildren' key={i} onClick={ moveSlide } />);
     }
 
     return (
@@ -230,12 +241,18 @@ export default class Carousel extends React.Component {
   forward() {
     if((this.state.pos + (this.props.children.length * this.width)) % (this.props.children.length * this.width) === 0) {
       this.setState((prevState) => {
-        return { translateX: prevState.translateX + ((100 / this.numSlides) * this.props.children.length) };
+        return {
+          translateX: prevState.translateX + ((100 / this.numSlides) * this.props.children.length),
+          slide: -1
+        };
       });
     }
 
     this.setState((prevState) => {
-      return { pos: prevState.pos - this.width };
+      return {
+        pos: prevState.pos - this.width,
+        slide: prevState.slide + 1
+      };
     });
   } //end of forward
 
@@ -254,13 +271,52 @@ export default class Carousel extends React.Component {
   backward() {
     if(((this.state.pos + this.width) % (this.props.children.length * this.width)) === 0) {
       this.setState((prevState) => {
-        return { translateX: prevState.translateX - ((100 / this.numSlides) * this.props.children.length)};
+        return {
+          translateX: prevState.translateX - ((100 / this.numSlides) * this.props.children.length),
+          slide: this.props.children.length
+        };
       })
     }
     this.setState((prevState) => {
-      return { pos: prevState.pos + this.width };
+      return {
+        pos: prevState.pos + this.width,
+        slide: prevState.slide - 1
+      };
     })
   } //end of backward
+
+  /* ==========================================================================================
+   * Purpose: Move the slide to the correct position depending on which dot on the dot navigation
+   *          is clicked
+   *  @ Params: slide [int] -> the slide the carousel should move to
+   *  @ Return: n/a
+   *  @ Error: n/a
+   * ========================================================================================== */
+  moveSlide(slide) {
+    if(this.dotsClick) {
+      if(slide < this.state.slide) {  //back by how much smaller
+        let numBackward = this.state.slide - slide;
+        this.setState((prevState) => {
+          return {
+            pos: prevState.pos +(numBackward * this.width),
+            slide: prevState.slide - (numBackward * 1)
+          };
+        });
+        return;
+      }
+
+      if(slide > this.state.slide) {  //forward by how much larger
+        let numForward = slide - this.state.slide;
+        this.setState((prevState) => {
+          return {
+            pos: prevState.pos - (numForward * this.width),
+            slide: prevState.slide + (numForward * 1)
+          };
+        });
+        return;
+      }
+    }
+  }
 
   /* ==========================================================================================
    * Purpose: If the autoplay property is selected, this function will execute on an interval basis
@@ -273,3 +329,6 @@ export default class Carousel extends React.Component {
     setInterval(() => { this.forward(); }, this.autoplaySpeed);
   }
 } //end of Carousel Class
+
+
+

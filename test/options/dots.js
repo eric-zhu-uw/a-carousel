@@ -13,21 +13,21 @@ describe('Dots option Testing', () => {
       expect(instance.dots).to.be.true;
     });
 
-    it('arrow={true}', () => {
+    it('dots={true}', () => {
       const component = (<Carousel dots={true}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
       const wrapper = shallow(component);
       const instance = wrapper.instance();
       expect(instance.dots).to.be.true;
     });
 
-    it('arrow={false}', () => {
+    it('dots={false}', () => {
       const component = (<Carousel dots={false}> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
       const wrapper = shallow(component);
       const instance = wrapper.instance();
       expect(instance.dots).to.be.false;
     });
 
-    it('arrow={invalid entry}', () => {
+    it('dots={invalid entry}', () => {
       const component = (<Carousel dots='invalid-string-entry'> <div> <h1> Hello 1 </h1> </div> <div> <h1> Hello 2 </h1> </div> </Carousel>);
       expect(() => { shallow(component) }).to.throw(Error);
     });
