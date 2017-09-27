@@ -54,6 +54,7 @@ code example goes here
 | ✅ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
 | ❌ | dotsStyle | `string` | `default` | default<br>\<classname\> | Applies the default styling or a custom classname for styling the dots navigation |
 | ❌ | dotsPosition | `string` | `below` | bottom<br>below | Determines the location of the dots navigation. Can be overrided by dotsStyle and adding position styling attributes |
+| ❌ | dotsActiveStyle | `boolean` | `true` | true<br>false | Attached an active class to the corresponding dot the carousel is currently displaying |
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
 | ❌ | touchThreshold | `number` | 0.5 | 0 < number <= 1 | To swipe a slide, you must scroll thos ratio of the slide |
 | ❌ | z-index| `number` | ... | ... | Sets the z-index of the carousel |
