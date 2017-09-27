@@ -3,7 +3,7 @@
 ### Description
 A React Project to simplify UI Carousels
 
-[Examples of a-carousel](#)
+[Examples of a-carousel](https://eric-zhu-uw.github.io/)
 
 ----------------------
 
@@ -12,10 +12,10 @@ A React Project to simplify UI Carousels
 #### Package Manager
 
 ```
-// npm
+// NPM
 npm install a-carousel
 
-// yarn
+// YARN
 yarn add a-carousel
 ```
 
@@ -25,7 +25,7 @@ yarn add a-carousel
 2. import the file directly
 
 ```
-code example goes here
+ <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
 
 
@@ -50,7 +50,7 @@ code example goes here
 | ✅ | autoplaySpeed | `number` | `3(s)` | any number > 0 | Determines the amount of time spent before moving to the next carousel slide |
 | ✅ | speed | `number` | `0.3(s)` | any number > 0 | Determines the transition speed of the carousel slides in seconds |
 | ✅ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
-| ❌ | dots | `boolean` | `false` | true<br>false | Enable slide indicator dots to show the current slide |
+| ✅ | dots | `boolean` | `false` | true<br>false | Enable slide navigation dots to show the current slide |
 | ❌ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
 | ❌ | ... | ... | ... | ... | ... |
@@ -60,12 +60,9 @@ code example goes here
 
 | Element | Classname |
 | ------- | --------- |
-| Previous Slide Button | backwardButton |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-| ... | ... |
+| Previous Slide Button | `backwardButtonCarousel` |
+| Next Slide Button | `forwardButtonCarousel` |
+| Navigation Dots | `dotsCarousel` |
 | ... | ... |
 | ... | ... |
 
@@ -75,11 +72,14 @@ These are some common issues people have with setting up and using the a-carouse
 
 ### Error Messages
 | Error Number | Description |
-| ------------ | ----------- |
-| [1] | ... |
-| [2] | ... |
-| [3] | ... |
-| [4] | ... |
-| [5] | ... |
-| [6] | ... |
-| [7] | ... |
+| :----------: | ----------- |
+| [1] | Must have 2 or more children elements within the Carousel Component to be considered valid |
+| [2] | Must enter a `boolean` for the **arrow** property |
+| [3] | Must enter a `number > 0` for the **speed** property |
+| [4] | Must enter a valid CSS-transition-timing-function. Refer to https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp |
+| [5] | Must enter a `boolean` for the **autoplay** property |
+| [6] | Must enter a `number > 0` for the **autoplaySpeed** property |
+| [7] | Must enter one of: outside, inside, bottom, below` |
+| [8] | Must enter a `string` for the **arrowStyleBackward** property |
+| [9] | Must enter a `string` for the **arrowStyleForward** property |
+| [10] | Must enter a `boolean` for the **dots** property  |
