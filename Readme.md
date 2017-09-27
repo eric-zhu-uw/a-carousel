@@ -52,8 +52,13 @@ code example goes here
 | ✅ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
 | ✅ | dots | `boolean` | `false` | true<br>false | Enable slide navigation dots to show the current slide |
 | ❌ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
+| ❌ | dotsStyle | ... | ... | ... | ... |
+| ❌ | dotsPosition | ... | ... | ... | ... |
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
-| ❌ | ... | ... | ... | ... | ... |
+| ❌ | touchThreshold | ... | ... | ... | ... |
+| ❌ | z-index| ... | ... | ... | ... |
+| ❌ | infinite | ... | ... | ... | ... |
+| ❌ | initial-slide | ... | ... | ... | ... |
 | ❌ | ... | ... | ... | ... | ... |
 
 ### To add additional styling to Carousel
