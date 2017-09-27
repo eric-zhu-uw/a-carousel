@@ -83,7 +83,15 @@ export default class Carousel extends React.Component {
       throw new Error('[11] - Must enter a boolean value for the <dotsClick> property');
     }
 
+    // Purpose: Check initialSlide property that it is a number or undefined
+    if(typeof(this.props.initialSlide) !== 'number' && this.props.initialSlide !== undefined) {
+      throw new Error('[12] - Must enter a (int) number between 0 and (#slides - 1) for the <initialSlide> property');
+    }
 
+    // Purpose: Check initialSlide property if its between [0 ... (#slides - 1)] and if it's an integer
+    if(typeof(this.props.initialSlide) === 'number' && (!Number.isInteger(this.props.initialSlide) || this.props.initialSlide < 0 || this.props.initialSlide >= this.props.children.length)) {
+      throw new Error('[12] - Must enter a (int) number between 0 and (#slides - 1) for the <initialSlide> property');
+    }
 
     //check more props here
     /* ========================================================================================== */
@@ -125,6 +133,8 @@ export default class Carousel extends React.Component {
      *    ~| type: boolean | default: true |
      *  dotsClick: Enable if you can navigate slides with the navigation dots
      *    ~| type: boolean | default: true |
+     *  initialSlide: Determine which slide will be displayed first
+     *    ~| type: number | default: 0 |
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -146,6 +156,7 @@ export default class Carousel extends React.Component {
     this.timing = this.props.timing === undefined ? 'ease-in' : this.props.timing;
     this.dots = this.props.dots === undefined ? true : this.props.dots;
     this.dotsClick = this.props.dotsClick === undefined ? true : this.props.dotsClick;
+    this.initialSlide = this.props.initialSlide === undefined ? 0 : this.props.initialSlide;
 
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
@@ -169,8 +180,8 @@ export default class Carousel extends React.Component {
      *  translateX:
      * ========================================================================================== */
     this.state = {
-      pos: -this.width,
-      slide: 0,
+      pos: -this.width * (this.initialSlide + 1),
+      slide: this.initialSlide,
       translateX: 0,
     };
   } // end of constructor

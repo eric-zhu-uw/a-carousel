@@ -58,7 +58,7 @@ code example goes here
 | ❌ | touchThreshold | `number` | 0.5 | 0 < number <= 1 | To swipe a slide, you must scroll thos ratio of the slide |
 | ❌ | z-index| `number` | ... | ... | Sets the z-index of the carousel |
 | ❌ | infinite | `boolean` | `true` | true<br>false | Determines if you can scroll infinitely through the slides |
-| ❌ | initial-slide | `number` | 0 | 0 < number < # of slides | Determines which slide the carousel starts on |
+| ✅ | initial-slide | `number` | 0 | 0 < number < # of slides | Determines which slide the carousel starts on |
 | ❌ | allowButtonSpam | `boolean` | `false` | true<br>false | Determines if you can spam click the forward/backward button or if you need to wait for the animation to finish |
 | ❌ | ... | ... | ... | ... | ... |
 
