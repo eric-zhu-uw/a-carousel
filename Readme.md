@@ -24,6 +24,13 @@ yarn add a-carousel
 1. [webpack-loader \[recommended\]](#css-option1)
 2. [import the file directly](#css-option2)
 
+#### Example
+ 
+```
+code example goes here
+```
+----------------------
+
 <br>
 <br>
 <br>
@@ -46,14 +53,7 @@ yarn add a-carousel
 ```
  <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
-
-
-#### Example
- 
-```
-code example goes here
-```
-_________________________
+----------------------
 
 ### Options
 
