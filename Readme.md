@@ -24,7 +24,7 @@ yarn add a-carousel
 1. [webpack-loader \[recommended\]](#css-option1)
 2. [import the file directly](#css-option2)
 
-#### Example
+#### Example (include link here)
 ```
 <div style={{width: '50%', margin: '0 auto'}}>
   <Carousel>
