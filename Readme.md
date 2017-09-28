@@ -31,11 +31,7 @@ code example goes here
 ```
 ----------------------
 
-<br>
-<br>
-<br>
-
-**<a name="css-option1"/>Option 1 [recommended]**<br>
+**<a name="css-option1"/>CSS Option 1 [recommended]**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require the css file from a-carousel in the parent component: Eg. \<App /\> or index.js<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`import 'a-carousel/build/styles.css';`
 
@@ -49,7 +45,7 @@ code example goes here
 <br>
 <br>
 <br>
-**<a name="css-option2"/>Option 2**
+**<a name="css-option2"/>CSS Option 2**
 ```
  <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
