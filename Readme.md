@@ -21,8 +21,8 @@ yarn add a-carousel
 
 #### Include the CSS file
 
-1. (webpack-loader \[recommended\])[#css-option1]
-2. import the file directly
+(webpack-loader \[recommended\])[#css-option1]
+import the file directly
 
 <br>
 <br>
