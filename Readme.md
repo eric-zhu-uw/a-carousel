@@ -53,7 +53,11 @@ yarn add a-carousel
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the loaders to your `webpack.config.js` to allow for CSS imports:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{test: /\.css$/,loader: "style-loader!css-loader"}`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now just build with `webpack` and voila <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now just build with `webpack` and voila <br><br><br>
+
+<a name="css-option2"></a>CSS Option 2: **Direct Link**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the \<link\> to the HTML file: Note: *adjust to meet the correct path*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<link rel='stylesheet' type='text/css' href='CORRECT-PATH/node_modules/a-carousel/build/styles.css' />```
 
 ----------------------
 
