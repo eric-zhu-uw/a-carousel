@@ -37,9 +37,9 @@ yarn add a-carousel
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{test: /\.css$/,loader: "style-loader!css-loader"}`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now just build with `webpack` and voila 
-
-
-
+<br>
+<br>
+<br>
 Option 2
 ```
  <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
