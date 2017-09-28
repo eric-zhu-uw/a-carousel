@@ -24,10 +24,9 @@ yarn add a-carousel
 1. webpack-loader
 2. import the file directly
 
-Option 1.
-
+**Option 1**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add css-loader and style-loader with:<br>
-&#09;`yarn add css-loader style-loader --dev` or `npm install css-loader style-loader --save-dev`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`yarn add css-loader style-loader --dev` or `npm install css-loader style-loader --save-dev`
 ```
 
 ```
