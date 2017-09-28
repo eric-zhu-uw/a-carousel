@@ -43,7 +43,7 @@ yarn add a-carousel
 ```
 ----------------------
 
-<a name="css-option1"/>CSS Option 1: **Webpack** [recommended]<br>
+<a name="css-option1"></a>aCSS Option 1: **Webpack** [recommended]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require the css file from a-carousel in the parent component: Eg. \<App /\> or index.js<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`import 'a-carousel/build/styles.css';`
 
@@ -57,7 +57,7 @@ yarn add a-carousel
 <br>
 <br>
 <br>
-<a name="css-option2"/>CSS Option 2: **Direct Link**<br>
+<a name="css-option2"></a>CSS Option 2: **Direct Link**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the \<link\> to the HTML file: Note: *adjust to meet the correct path*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<link rel='stylesheet' type='text/css' href='CORRECT-PATH/node_modules/a-carousel/build/styles.css' />```
 ----------------------
