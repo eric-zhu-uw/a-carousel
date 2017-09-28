@@ -27,7 +27,7 @@ yarn add a-carousel
 Option 1.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add css-loader and style-loader with:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`yarn add css-loader style-loader --dev` or `npm install css-loader style-loader --save-dev`
+&#09;`yarn add css-loader style-loader --dev` or `npm install css-loader style-loader --save-dev`
 ```
 
 ```
