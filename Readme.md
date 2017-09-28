@@ -31,7 +31,7 @@ yarn add a-carousel
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add css-loader and style-loader with:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`yarn add css-loader style-loader --dev` or `npm install css-loader style-loader --save-dev`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the loaders to your `webpack.config.js` to allow for CSS imports:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the loaders to your `webpack.config.js` to allow for CSS imports:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{test: /\.css$/,loader: "style-loader!css-loader"}`
 
 Option 1
