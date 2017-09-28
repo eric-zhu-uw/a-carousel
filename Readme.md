@@ -21,9 +21,17 @@ yarn add a-carousel
 
 #### Include the CSS file
 
-1. either use webpack & load it in..
+1. webpack-loader
 2. import the file directly
 
+Option 1.
+
+Add css-loader and style-loader with `yarn add css-loader style-loader --dev`
+```
+
+```
+
+Option 1
 ```
  <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
@@ -92,3 +100,4 @@ These are some common issues people have with setting up and using the a-carouse
 | [9] | Must enter a `string` for the **arrowStyleForward** property |
 | [10] | Must enter a `boolean` for the **dots** property  |
 | [11] | just enter a boolean value for the **dotsClick** property |
+| [12] | Must enter a (int) number between 0 and (#slides - 1) for the **initialSlide** property |
