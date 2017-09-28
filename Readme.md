@@ -40,7 +40,7 @@ yarn add a-carousel
 <br>
 <br>
 <br>
-Option 2
+**Option 2**<br>
 ```
  <link rel='stylesheet' type='text/css' href='../node_modules/a-carousel/build/styles.css' />
 ```
