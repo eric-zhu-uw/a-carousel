@@ -59,7 +59,7 @@ yarn add a-carousel
 <br>
 <a name="css-option2"/>CSS Option 2: **Direct Link**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the \<link\> to the HTML file: Note: *adjust to meet the correct path*
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<link rel='stylesheet' type='text/css' href='CORRECT-PATH/node_modules/a-carousel/build/styles.css' />`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<link rel='stylesheet' type='text/css' href='CORRECT-PATH/node_modules/a-carousel/build/styles.css' />```
 ----------------------
 
 ### Options
