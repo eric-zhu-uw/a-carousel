@@ -24,6 +24,10 @@ yarn add a-carousel
 1. webpack-loader [recommended]
 2. import the file directly
 
+<br>
+<br>
+<br>
+
 **Option 1 [recommended]**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require the css file from a-carousel in the parent component: Eg. \<App /\> or index.js<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`import 'a-carousel/build/styles.css';`
