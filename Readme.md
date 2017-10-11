@@ -120,3 +120,7 @@ These are some common issues people have with setting up and using the a-carouse
 | [11] | just enter a boolean value for the **dotsClick** property |
 | [12] | Must enter a (int) number between 0 and (#slides - 1) for the **initialSlide** property |
 | [13] | Must enter a string value for the <dotsStyle> property |
+
+### To Do List
+1. optimize and minify build files  // maybe change to webpack
+2. finish Touch features
