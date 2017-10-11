@@ -97,7 +97,7 @@ yarn add a-carousel
 | Previous Slide Button | `backwardButtonCarousel` |
 | Next Slide Button | `forwardButtonCarousel` |
 | Navigation Dots | `dotsCarousel` |
-| Individual Nag Dots | `dotsChildren` |
+| Individual Nav Dots | `dotsChildren` |
 | ... | ... |
 
 
