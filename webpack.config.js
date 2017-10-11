@@ -7,25 +7,17 @@ module.exports = {
 	context: srcPath,
 	target: 'web',
 
-entry: [srcPath + '/index.js'],
+	entry: srcPath + '/index.js',
 	output: {
 		path: distPath,
-		filename: 'index.js',
-		publicPath: '/'
-	},
+		filename: 'index.js'
+  },
 
 	module: {
 		rules: [
-			{ 
-				test: /\.js$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/
-			},
-      { 
-      	test: /\.jsx$/,
-      	loader: 'babel-loader',
-      	exclude: /node_modules/
-      }
+			{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, loader: 'style-loader'}
 		],
 	}
 };

@@ -12,10 +12,10 @@ A React Project to simplify UI Carousels
 #### Package Manager
 
 ```
-// NPM
+// npm
 npm install a-carousel
 
-// YARN
+// yarn
 yarn add a-carousel
 ```
 
@@ -56,8 +56,11 @@ yarn add a-carousel
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now just build with `webpack` and voila <br><br><br>
 
 <a name="css-option2"></a>CSS Option 2: **Direct Link**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the \<link\> to the HTML file: Note: *adjust to meet the correct path*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add the \<link\> to the HTML file: Note: *adjust to meet the correct path*<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<link rel='stylesheet' type='text/css' href='CORRECT-PATH/node_modules/a-carousel/build/styles.css' />```
+
+<a name="css-option3"></a>CSS Option 3: **Grunt**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Need to create a solution for grunt<br>
 
 ----------------------
 
