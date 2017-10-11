@@ -80,16 +80,14 @@ yarn add a-carousel
 | ✅ | timing | `string` | `ease-in-out` | Refer to: [W3School CSS Transition-Timing-Property](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp) for all possible values | Determines the transition timing function of the carousel slides |
 | ✅ | dots | `boolean` | `false` | true<br>false | Enable slide navigation dots to show the current slide |
 | ✅ | dotsClick | `boolean` | `true` | true<br>false | Enables indicator dots to be clickable to go to particular slide numbers |
-| ❌ | dotsStyle | `string` | `default` | default<br>\<classname\> | Applies the default styling or a custom classname for styling the dots navigation |
+| ✅ | dotsStyle | `string` | `default` | default<br>\<classname\> | Applies the default styling or a custom classname for styling the dots navigation |
 | ❌ | dotsPosition | `string` | `below` | bottom<br>below | Determines the location of the dots navigation. Can be overrided by dotsStyle and adding position styling attributes |
-| ❌ | dotsActiveStyle | `boolean` | `true` | true<br>false | Attached an active class to the corresponding dot the carousel is currently displaying |
 | ❌ | touch | `boolean` | `true` | true<br>false | Enabled touch scrolling of the carousel |
 | ❌ | touchThreshold | `number` | 0.5 | 0 < number <= 1 | To swipe a slide, you must scroll thos ratio of the slide |
 | ❌ | z-index| `number` | ... | ... | Sets the z-index of the carousel |
 | ❌ | infinite | `boolean` | `true` | true<br>false | Determines if you can scroll infinitely through the slides |
 | ✅ | initial-slide | `number` | 0 | 0 < number < # of slides | Determines which slide the carousel starts on |
 | ❌ | allowButtonSpam | `boolean` | `false` | true<br>false | Determines if you can spam click the forward/backward button or if you need to wait for the animation to finish |
-| ❌ | ... | ... | ... | ... | ... |
 
 
 ### To add additional styling to Carousel
@@ -99,7 +97,7 @@ yarn add a-carousel
 | Previous Slide Button | `backwardButtonCarousel` |
 | Next Slide Button | `forwardButtonCarousel` |
 | Navigation Dots | `dotsCarousel` |
-| ... | ... |
+| Individual Nag Dots | `dotsChildren` |
 | ... | ... |
 
 
@@ -121,3 +119,4 @@ These are some common issues people have with setting up and using the a-carouse
 | [10] | Must enter a `boolean` for the **dots** property  |
 | [11] | just enter a boolean value for the **dotsClick** property |
 | [12] | Must enter a (int) number between 0 and (#slides - 1) for the **initialSlide** property |
+| [13] | Must enter a string value for the <dotsStyle> property |

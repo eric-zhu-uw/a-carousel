@@ -1,3 +1,6 @@
+// ============================================ //
+
+// Dots Styling Hooks
 .dotsCarousel {
   display: flex;
   flex-flow: row nowrap;
@@ -6,6 +9,18 @@
 }
 
 .dotsChildren {
+
+}
+
+
+// ============================================ //
+
+
+// ============================================ //
+
+// Default Dot Styling @Override with dotsStyle property
+
+.dotsChildrenStyle {
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -13,6 +28,9 @@
   margin: 0 20px;
 }
 
-.dotsChildren:hover {
+.dotChildrenStyle:hover {
   background-color: black;
 }
+
+
+// ============================================ //
