@@ -93,6 +93,11 @@ export default class Carousel extends React.Component {
       throw new Error('[12] - Must enter a (int) number between 0 and (#slides - 1) for the <initialSlide> property');
     }
 
+    // Purpose: Check dotsStyle property that it is a string or undefined
+    if(typeof(this.props.dotsStyle) !== 'string' && this.props.dotsStyle !== undefined) {
+      throw new Error('[13] - Must enter a string value for the <dotsStyle> property');
+    }
+
     //check more props here
     /* ========================================================================================== */
 
@@ -135,6 +140,8 @@ export default class Carousel extends React.Component {
      *    ~| type: boolean | default: true |
      *  initialSlide: Determine which slide will be displayed first
      *    ~| type: number | default: 0 |
+     *  dotsStyle: the classname of the dotsChildren
+     *    ~| type: String | default 'default' |
      * ========================================================================================== */
     this.forward = this.forward.bind(this);
     this.backward = this.backward.bind(this);
@@ -157,6 +164,7 @@ export default class Carousel extends React.Component {
     this.dots = this.props.dots === undefined ? true : this.props.dots;
     this.dotsClick = this.props.dotsClick === undefined ? true : this.props.dotsClick;
     this.initialSlide = this.props.initialSlide === undefined ? 0 : this.props.initialSlide;
+    this.dotsStyle = this.props.dotsStyle === undefined ? 'default' : this.props.dotsStyle;
 
     /* ======================================== Styling =========================================
      *  backwardButtonClass: classNames for the backwards button
@@ -173,6 +181,7 @@ export default class Carousel extends React.Component {
     this.backwardButtonClass = `backwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'backwardButton-' + this.arrowPosition} ${this.arrowStyleBackward === 'default' ? 'backwardButtonStyle' : this.arrowStyleBackward}`;
     this.forwardButtonClass = `forwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'forwardButton-' + this.arrowPosition} ${this.arrowStyleForward === 'default' ? 'forwardButtonStyle' : this.arrowStyleForward}`;
     this.dotsClass = `dotsCarousel ${this.dots ? '' : 'hideElement'}`;
+    this.dotsChildrenClass = `dotsChildren ${this.dotsStyle === 'default' ? 'dotsChildrenStyle' : this.dotStyle}`
     
     /* ==========================================================================================
      *  pos:
@@ -204,7 +213,7 @@ export default class Carousel extends React.Component {
     let displayPosChild = [];
     for(var i = 0; i < this.props.children.length; i++) {
       let moveSlide = this.moveSlide.bind(this, i);
-      displayPosChild.push(<div className='dotsChildren' key={i} onClick={ moveSlide } />);
+      displayPosChild.push(<div className={ this.dotsChildrenClass } key={i} onClick={ moveSlide } />);
     }
 
     return (
