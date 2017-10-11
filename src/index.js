@@ -181,7 +181,7 @@ export default class Carousel extends React.Component {
     this.backwardButtonClass = `backwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'backwardButton-' + this.arrowPosition} ${this.arrowStyleBackward === 'default' ? 'backwardButtonStyle' : this.arrowStyleBackward}`;
     this.forwardButtonClass = `forwardButtonCarousel ${this.arrow ? '' : 'hideElement'} ${'forwardButton-' + this.arrowPosition} ${this.arrowStyleForward === 'default' ? 'forwardButtonStyle' : this.arrowStyleForward}`;
     this.dotsClass = `dotsCarousel ${this.dots ? '' : 'hideElement'}`;
-    this.dotsChildrenClass = `dotsChildren ${this.dotsStyle === 'default' ? 'dotsChildrenStyle' : this.dotStyle}`
+    this.dotsChildrenClass = `dotsChildren ${this.dotsStyle === 'default' ? 'dotsChildrenStyle' : this.dotsStyle}`
     
     /* ==========================================================================================
      *  pos:
