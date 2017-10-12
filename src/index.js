@@ -154,7 +154,7 @@ export default class Carousel extends React.Component {
     this.widthSuffix = '%';
     this.heightSuffix = '%';
     this.arrow = this.props.arrow === undefined ? true : this.props.arrow;
-    this.arrowPosition = this.props.arrowPosition === undefined ? 'outside' : this.props.arrowPosition;
+    this.arrowPosition = this.props.arrowPosition === undefined ? 'inside' : this.props.arrowPosition;
     this.arrowStyleBackward = this.props.arrowStyleBackward === undefined ? 'default' : this.props.arrowStyleBackward;
     this.arrowStyleForward = this.props.arrowStyleForward === undefined ? 'default' : this.props.arrowStyleForward;
     this.autoplay = this.props.autoplay === undefined ? false : this.props.autoplay;

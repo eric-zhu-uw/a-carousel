@@ -60,31 +60,33 @@
 // ============================================ //
 // ====== Default Arrow Styling Property ====== //
 
-// Default Styling for Backward Button @Override with arrowStyleBackward class property
-.backwardButtonStyle {
+.backwardButtonStyle, .forwardButtonStyle {
   width: 30px;
   height: 30px;
   border: none;
   outline: none;
-  background-color: transparent;
-  border-left: 5px solid #000000;
-  border-bottom: 5px solid #000000;
-  transform: rotate(45deg);
+  background-color: black;
+  border-radius: 20px;
+  opacity: 0.6;
   cursor: pointer;
 }
 
-// Default Styling for Forward Button @Override with arrowStyleForward class property
-.forwardButtonStyle {
-  width: 30px;
-  height: 30px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  border-bottom: 5px solid #000000;
-  border-right: 5px solid #000000;
-  transform: rotate(-45deg);
-  cursor: pointer;
+.backwardButtonStyle:hover, .forwardButtonStyle:hover{
+  opacity: 0.85;
 }
+
+.backwardButtonStyle:after {
+  content: "\2039";
+  color: white;
+  font-size: 1.5em;
+}
+
+.forwardButtonStyle:after {
+  content: "\203a";
+  color: white;
+  font-size: 1.5em;
+}
+
 
 // ============================================ //
 
